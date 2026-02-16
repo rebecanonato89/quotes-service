@@ -1,16 +1,9 @@
 package com.seguro.quotes.controller
 
 import com.seguro.quotes.common.Either
-import com.seguro.quotes.domain.validation.QuoteValidator
 import com.seguro.quotes.dto.QuoteRequest
 import com.seguro.quotes.dto.QuoteResponse
-import com.seguro.quotes.domain.model.Quote
-import com.seguro.quotes.domain.enums.QuoteStatus
-import com.seguro.quotes.domain.extensions.toSafeLogString
-import com.seguro.quotes.domain.service.PriceCalculator
 import com.seguro.quotes.dto.ErrorResponse
-import com.seguro.quotes.dto.normalized
-import com.seguro.quotes.repository.QuoteRepository
 import com.seguro.quotes.service.QuoteService
 import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
@@ -39,18 +32,13 @@ class QuoteController(private val quoteService: QuoteService) {
     }
 
     @PostMapping("/async")
-    fun createQuoteSync(
+    fun createQuoteAsync(
         @Valid @RequestBody request: QuoteRequest
     ): ResponseEntity<*> {
-        return when (val result = quoteService.createQuoteAsync(request)) {
-            is Quote -> ResponseEntity
-                .status(HttpStatus.CREATED)
-                .body(QuoteResponse.from(result))
-
-            else -> ResponseEntity
-                .badRequest()
-                .body(ErrorResponse("UNKNOWN_ERROR", "An unknown error occurred"))
-        }
+        val quote = quoteService.createQuoteAsync(request)
+        return ResponseEntity
+            .status(HttpStatus.ACCEPTED)
+            .body(QuoteResponse.from(quote))
     }
 
 

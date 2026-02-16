@@ -4,6 +4,8 @@ import com.seguro.quotes.common.Either
 import com.seguro.quotes.common.DomainError
 import com.seguro.quotes.domain.model.Policy
 import com.seguro.quotes.domain.enums.PolicyStatus
+import com.seguro.quotes.infrastructure.event.EventPublisher
+import com.seguro.quotes.domain.event.toIssuedEvent
 import com.seguro.quotes.repository.QuoteRepository
 import com.seguro.quotes.repository.PolicyRepository
 import org.springframework.stereotype.Service
@@ -13,7 +15,8 @@ import java.util.UUID
 @Service
 class PolicyService(
     private val policyRepository: PolicyRepository,
-    private val quoteRepository: QuoteRepository
+    private val quoteRepository: QuoteRepository,
+    private val eventPublisher: EventPublisher
 ) {
 
     // Emitir apólice a partir de quote
@@ -46,6 +49,8 @@ class PolicyService(
 
         // 4. Persistir
         val savedPolicy = policyRepository.save(policy)
+
+        eventPublisher.publish(savedPolicy.toIssuedEvent())
 
         // 5. Log
         println("Policy emitida: id=${savedPolicy.id}, quoteId=$quoteId")
