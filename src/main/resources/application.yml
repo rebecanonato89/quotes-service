@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: quotes-service
+
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+      indent-output: true
+    default-property-inclusion: non_null
+    time-zone: America/Sao_Paulo
+
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: on_param
+    include-exception: false
+
+logging:
+  level:
+    root: INFO
+    com.seguro.quotes: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+# Configurações do MVP
+app:
+  pricing:
+    limit-max: 300.0
+    base-auto: 100.0
+    base-vida: 80.0
+  quote:
+    expiration-days: 7
+
