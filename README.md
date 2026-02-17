@@ -211,21 +211,42 @@ curl -X POST http://localhost:8080/quotes \
   }'
 ```
 
+## ✅ Progresso das Tasks
+
+- [x] Task 1: Modelar domínio completo
+- [x] Task 2: Criar endpoints básicos (stubs)
+- [x] Task 3: Implementar validação com Either
+- [x] Task 4: Implementar precificação funcional
+- [x] Task 5: Adicionar extensions e normalização
+- [x] Task 6: Criar repositories in-memory
+- [x] Task 7: Criar service layer
+- [x] Task 8: Adicionar coroutines (risk score)
+- [x] Task 9: Implementar eventos de domínio
+- [ ] Task 10: Preparar design para microserviços
+
+> Marque as tasks concluídas com [x].
+
+## 🧠 Funcionalidades Adicionais e IA
+
+- Validação automática de dados usando IA (documentos, emails, veículos)
+- Precificação inteligente: modelos de IA para cálculo de preço com dados históricos e fatores de risco
+- Integração com APIs de IA (Google GenAI) para análise de risco, geração de relatórios e respostas automáticas
+- Automação de testes: geração de casos de teste e validação de respostas usando IA
+- Rotas síncronas e assíncronas: endpoints REST tradicionais e endpoints com coroutines para processamento paralelo (async/sync)
+
+## 🌟 Oportunidades de Expansão
+
+- Recomendação de coberturas personalizadas com IA
+- Análise preditiva de sinistros e fraudes
+- Chatbot para atendimento e suporte ao cliente
+- Dashboard inteligente para métricas e insights
+- Expansão para outros tipos de seguros com precificação automatizada
+- Integração com sistemas externos para validação de dados em tempo real
+- Design para microserviços: separar domínios, escalabilidade, comunicação via eventos
+
 ## 📚 Próximos Passos
 
-Siga o guia: `PROJETO_QUOTES_MVP_COMPLETO.md` na raiz do workspace para implementar as 10 tasks progressivas.
-
-### Tasks Pendentes:
-- [ ] Task 1: Modelar domínio completo
-- [ ] Task 2: Criar endpoints básicos (stubs)
-- [ ] Task 3: Implementar validação com Either
-- [ ] Task 4: Implementar precificação funcional
-- [ ] Task 5: Adicionar extensions e normalização
-- [ ] Task 6: Criar repositories in-memory
-- [ ] Task 7: Criar service layer
-- [ ] Task 8: Adicionar coroutines (risk score)
-- [ ] Task 9: Implementar eventos de domínio
-- [ ] Task 10: Preparar design para microserviços
+Siga o guia: `PROJETO_QUOTES_MVP_COMPLETO.md` na raiz do workspace para implementar a Task 10 e explorar as ideias avançadas.
 
 ## 📖 Documentação Útil
 
@@ -240,4 +261,4 @@ Projeto educacional - MVP de aprendizado Kotlin.
 ---
 
 **Data de criação**: 11/02/2026
-
+**Última atualização**: 17/02/2026
