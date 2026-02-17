@@ -61,6 +61,13 @@
             <version>1.7.3</version>
         </dependency>
 
+        <!-- Gemini AI Client (removido: genai-client 0.1.0, mantido google-genai) -->
+        <dependency>
+            <groupId>com.google.genai</groupId>
+            <artifactId>google-genai</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
         <!-- Jackson Kotlin Module (JSON serialization) -->
         <dependency>
             <groupId>com.fasterxml.jackson.module</groupId>
@@ -94,6 +101,7 @@
             <version>1.13.9</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <build>

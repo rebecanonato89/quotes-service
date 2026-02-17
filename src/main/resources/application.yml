@@ -33,3 +33,5 @@ app:
   quote:
     expiration-days: 7
 
+gemini:
+  apiKey: '' # Pode ser sobrescrito por variável de ambiente GOOGLE_API_KEY

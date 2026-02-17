@@ -12,6 +12,11 @@ sealed class Either <out L, out R> {
         is Left -> null
     }
 
+    fun leftOrNull(): L? = when (this) {
+        is Left -> value
+        is Right -> null
+    }
+
     // Transform Right, keep Left
     fun <T> map(transform: (R) -> T): Either<L, T> = when (this) {
         is Right -> Right(transform(value))

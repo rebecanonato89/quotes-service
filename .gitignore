@@ -3,6 +3,9 @@
 target/
 out/
 
+.env
+
+
 # Log files
 *.log
 
